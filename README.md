@@ -1,3 +1,8 @@
+FOR LIVE DEMO="click on that site"
+https://vinayakasole.github.io/DSA_Visualizer_in_C/
+@https://vinayakasole.github.io/DSA_Visualizer_in_C/
+
+
 # DSA Visualizer & Practice Lab
 
 An educational web app to learn Data Structures and Algorithms through interactive visualizations, clean C code side‑by‑side, stepper execution, and practice exercises. Runs entirely in your browser (no backend).
