@@ -1,6 +1,6 @@
 FOR LIVE DEMO="click on that site"
 https://vinayakasole.github.io/DSA_Visualizer_in_C/
-@https://vinayakasole.github.io/DSA_Visualizer_in_C/
+
 
 
 # DSA Visualizer & Practice Lab
