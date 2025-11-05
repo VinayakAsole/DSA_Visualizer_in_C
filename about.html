@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About — Vinayak Asole</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		.hero {
+			background: linear-gradient(135deg, rgba(74,144,226,0.15), rgba(123,104,238,0.15));
+			border: 2px solid var(--border-color);
+			border-radius: 16px;
+			padding: 32px;
+			box-shadow: var(--shadow);
+		}
+		.hero h1 {
+			margin-bottom: 8px;
+		}
+		.meta {
+			display: flex;
+			gap: 12px;
+			flex-wrap: wrap;
+			margin-top: 10px;
+		}
+		.badge {
+			display: inline-block;
+			padding: 6px 12px;
+			border-radius: 999px;
+			background: var(--bg-color);
+			border: 1px solid var(--border-color);
+			font-weight: 600;
+			color: var(--text-primary);
+			font-size: 0.9rem;
+		}
+		.section {
+			background: var(--card-bg);
+			border: 2px solid var(--border-color);
+			border-radius: 12px;
+			padding: 20px;
+			box-shadow: var(--shadow);
+		}
+		.grid-2 {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+		}
+		@media (max-width: 900px) {
+			.grid-2 { grid-template-columns: 1fr; }
+		}
+		.kv {
+			display: grid;
+			grid-template-columns: 140px 1fr;
+			gap: 8px 16px;
+			margin-top: 10px;
+		}
+		.kv div:nth-child(odd) {
+			color: var(--text-secondary);
+			font-weight: 600;
+		}
+		.pill {
+			display: inline-block;
+			padding: 6px 10px;
+			margin: 6px 6px 0 0;
+			border-radius: 999px;
+			background: var(--bg-color);
+			border: 1px solid var(--border-color);
+			font-size: 0.9rem;
+		}
+		.socials a {
+			text-decoration: none;
+			margin-right: 12px;
+			font-weight: 600;
+			color: var(--primary-color);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header style="margin-bottom: 20px;">
+			<a href="index.html" class="back-btn">← Back to Dashboard</a>
+		</header>
+
+		<section class="hero">
+			<h1>👋 Hi, I'm <span style="color: var(--primary-color);">Vinayak Asole</span></h1>
+			<p class="subtitle" style="color: var(--text-primary);">Creative developer focused on building elegant, educational, and high‑quality web experiences.</p>
+			<div class="meta">
+				<span class="badge">Front-end & Visualization</span>
+				<span class="badge">Algorithms & DSA</span>
+				<span class="badge">UI/UX Enthusiast</span>
+			</div>
+		</section>
+
+		<div class="grid-2" style="margin-top: 20px;">
+			<section class="section">
+				<h2 style="color: var(--primary-color);">About the Developer</h2>
+				<p style="margin-top: 8px;">I'm passionate about turning complex ideas into simple, beautiful, and interactive products. This DSA Visualizer is crafted to help learners understand algorithms deeply — by seeing them, stepping through them, and connecting them to clean C code.</p>
+				<div class="kv">
+					<div>Name</div><div>Vinayak Asole</div>
+					<div>Focus</div><div>Visual learning, interactive web, CS fundamentals</div>
+					<div>Style</div><div>Minimal, modern, accessible</div>
+					<div>Philosophy</div><div>Ship clear, thoughtful, and maintainable work</div>
+				</div>
+			</section>
+
+			<section class="section">
+				<h2 style="color: var(--primary-color);">What I Work With</h2>
+				<div style="margin-top: 10px;">
+					<span class="pill">HTML</span>
+					<span class="pill">CSS</span>
+					<span class="pill">JavaScript (ES6+)</span>
+					<span class="pill">C (DSA)</span>
+					<span class="pill">Local Storage</span>
+					<span class="pill">UX Writing</span>
+				</div>
+				<h3 style="margin-top: 16px; color: var(--primary-color);">Highlights</h3>
+				<ul style="margin-left: 18px; margin-top: 8px;">
+					<li>Designed a modular DSA lab with visualizers for arrays, patterns, and linked lists</li>
+					<li>Mapped clean C code to interactive JS simulations</li>
+					<li>Built a stepper engine for step‑by‑step algorithm execution</li>
+					<li>Implemented practice & progress modes with export/import</li>
+				</ul>
+			</section>
+		</div>
+
+		<section class="section" style="margin-top: 20px;">
+			<h2 style="color: var(--primary-color);">Contact & Socials</h2>
+			<p style="margin-top: 8px;">Want to collaborate or just say hi?</p>
+			<div class="socials" style="margin-top: 6px;">
+				<a href="vinayakasole1@gmail.com" title="Email">✉️ Email</a>
+				<a href="https://www.linkedin.com/in/vinayak-asole-b1212625a " title="LinkedIn">🔗 LinkedIn</a>
+				<a href="https://instagram.com/vinayak_____uv" title="GitHub">🐙 GitHub</a>
+			</div>
+		</section>
+
+		<footer style="text-align: center; color: white; padding: 30px 0;">
+			<p>© <span id="year"></span> Vinayak Asole — Built with care and curiosity.</p>
+		</footer>
+	</div>
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+	</script>
+</body>
+</html>

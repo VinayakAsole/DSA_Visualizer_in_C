@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment - DSA Visualizer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="experiment-container">
+        <header class="experiment-header">
+            <a href="index.html" class="back-btn">← Back to Dashboard</a>
+            <h1 id="experiment-title">Experiment</h1>
+            <div class="experiment-meta">
+                <span id="experiment-category"></span>
+                <span class="difficulty" id="experiment-difficulty"></span>
+            </div>
+            <div style="margin-top:10px;">
+                <button class="btn-secondary" id="theme-toggle">🌙 Dark</button>
+            </div>
+        </header>
+
+        <div class="experiment-layout">
+            <!-- Left Panel: C Code -->
+            <div class="panel code-panel">
+                <h2>📝 C Code</h2>
+                <div class="code-editor">
+                    <pre id="c-code-display"><code></code></pre>
+                </div>
+                <div class="code-info">
+                    <button class="btn-secondary" id="copy-code-btn">Copy Code</button>
+                    <button class="btn-secondary" id="toggle-highlight-btn">Toggle Highlight</button>
+                </div>
+            </div>
+
+            <!-- Middle Panel: Controls & Visualizer -->
+            <div class="panel main-panel">
+                <div class="controls-section">
+                    <h2>🎮 Controls</h2>
+                    <div class="input-group" id="input-section">
+                        <!-- Dynamic input fields based on experiment -->
+                    </div>
+                    <div class="control-helpers" id="input-helpers" style="margin-bottom:10px; display:flex; gap:8px; flex-wrap:wrap;">
+                        <button class="btn-secondary" id="randomize-btn">Randomize Array</button>
+                        <button class="btn-secondary" id="sort-btn">Sort Array</button>
+                        <button class="btn-secondary" id="reset-inputs-btn">Reset Inputs</button>
+                        <select class="btn-secondary" id="presets-select">
+                            <option value="">Presets</option>
+                            <option value="best">Best Case</option>
+                            <option value="average">Average Case</option>
+                            <option value="worst">Worst Case</option>
+                        </select>
+                    </div>
+                    <div class="control-buttons">
+                        <button class="btn-primary" id="run-btn">▶ Run</button>
+                        <button class="btn-secondary" id="step-btn">⏭ Step</button>
+                        <button class="btn-secondary" id="pause-btn">⏸ Pause</button>
+                        <button class="btn-secondary" id="prev-btn">⏮ Prev</button>
+                        <button class="btn-secondary" id="reset-btn">🔄 Reset</button>
+                        <button class="btn-secondary" id="auto-btn">▶▶ Auto</button>
+                    </div>
+                    <div class="speed-control">
+                        <label>Speed: <span id="speed-value">1x</span></label>
+                        <input type="range" id="speed-slider" min="0.5" max="3" step="0.5" value="1">
+                        <div style="display:flex; gap:6px;">
+                            <button class="btn-secondary" data-speed="0.5">0.5x</button>
+                            <button class="btn-secondary" data-speed="1">1x</button>
+                            <button class="btn-secondary" data-speed="2">2x</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualizer-section">
+                    <h2>👁️ Visualization</h2>
+                    <div class="visualizer-area" id="visualizer-area">
+                        <!-- Visualization will be rendered here -->
+                    </div>
+                    <div class="metrics" id="metrics" style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
+                        <span><strong>Steps:</strong> <span id="metric-steps">0</span></span>
+                        <span><strong>Comparisons:</strong> <span id="metric-comparisons">0</span></span>
+                        <span><strong>Swaps:</strong> <span id="metric-swaps">0</span></span>
+                    </div>
+                    <div class="output-log" id="output-log"></div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Explanation & Practice -->
+            <div class="panel explanation-panel">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="explanation">📖 Theory</button>
+                    <button class="tab-btn" data-tab="practice">✏️ Practice</button>
+                    <button class="tab-btn" data-tab="progress">📊 Progress</button>
+                </div>
+
+                <div class="tab-content active" id="explanation-tab">
+                    <h3>Algorithm Explanation</h3>
+                    <div id="algorithm-explanation"></div>
+                    
+                    <h3>Pseudocode</h3>
+                    <pre id="pseudocode"></pre>
+                    
+                    <h3>Complexity Analysis</h3>
+                    <div id="complexity-analysis"></div>
+                </div>
+
+                <div class="tab-content" id="practice-tab">
+                    <h3>Practice Mode</h3>
+                    <div id="practice-tests">
+                        <!-- Practice test cases will be loaded here -->
+                    </div>
+                    <div class="practice-result" id="practice-result"></div>
+                </div>
+
+                <div class="tab-content" id="progress-tab">
+                    <h3>Your Progress</h3>
+                    <div id="progress-list">
+                        <!-- Saved attempts will be listed here -->
+                    </div>
+                    <button class="btn-secondary" id="export-btn">📥 Export Progress</button>
+                    <button class="btn-secondary" id="import-btn">📤 Import Progress</button>
+                    <input type="file" id="import-file" accept=".json" style="display: none;">
+                    <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
+                        <button class="btn-secondary" id="copy-js-btn">📋 Copy JS Algorithm</button>
+                        <button class="btn-secondary" id="copy-state-btn">📋 Copy Current State</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/experiments.js"></script>
+    <script src="js/stepper.js"></script>
+    <script src="js/visualizers/arrayViz.js"></script>
+    <script src="js/visualizers/linkedListViz.js"></script>
+    <script src="js/visualizers/patternViz.js"></script>
+    <script src="js/algorithms/c_snippets.js"></script>
+    <script src="js/algorithms/js_impl/array.js"></script>
+    <script src="js/algorithms/js_impl/search.js"></script>
+    <script src="js/algorithms/js_impl/sort.js"></script>
+    <script src="js/algorithms/js_impl/pattern.js"></script>
+    <script src="js/algorithms/js_impl/linkedlist.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Initialize experiment page
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const experimentId = urlParams.get('id');
+            if (experimentId) {
+                initExperiment(experimentId);
+            }
+        });
+    </script>
+</body>
+</html>
+
